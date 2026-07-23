@@ -1,24 +1,108 @@
 aid: 24-7-real-media
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/24-7-real-media.png
 name: 24/7 Real Media
-description: '24/7 Real Media is a company surfaced as a portfolio company of trinity-ventures and added
-  to the API Evangelist network as a stub for enrichment. Sector: marketing. This profile is a lead awaiting
-  the enrichment pipeline.'
+description: '24/7 Real Media was a New York digital advertising technology and media
+  company formed when 24/7 Media merged with Real Media in 2001, acquiring the Open
+  AdStream publisher ad server. Venture-backed (Trinity Ventures, Zero Stage Capital)
+  before its NASDAQ listing, it was acquired by WPP Group in July 2007 for approximately
+  $649 million ($11.75 per share) and run inside WPP Digital. The business was renamed
+  24/7 Media, then merged into WPP''s programmatic arm Xaxis in January 2014, retiring
+  the 24/7 brand; Open AdStream was rebranded Xaxis for Publishers and sold to AppNexus
+  later that year. Xaxis itself was sunset into GroupM Nexus in January 2024. The company
+  is defunct: it operates no website, developer portal, or public API surface today.'
 url: https://raw.githubusercontent.com/api-evangelist/24-7-real-media/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - trinity-ventures
+- zero-stage-capital
 x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier-reason: defunct-no-api-surface
+x-status: defunct
+x-defunct:
+  acquired_by: WPP Group
+  acquired_date: '2007-07-13'
+  acquisition_value_usd: 649000000
+  brand_retired: '2014-01'
+  successor_lineage:
+  - 24/7 Media (WPP Digital)
+  - Xaxis (GroupM) — merged January 2014, 24/7 brand retired
+  - GroupM Nexus — Xaxis brand sunset January 2024
+  product_disposition:
+  - product: Open AdStream
+    outcome: rebranded Xaxis for Publishers, sold to AppNexus (2014); AppNexus later
+      acquired by AT&T/Xandr, then Microsoft
+x-probe:
+  date: '2026-07-20'
+  method: probed
+  findings:
+  - host: 247realmedia.com
+    dns_a: none
+    ns: azure-dns (parked)
+    http_status: 000
+    note: resolves NOERROR with no A record; no website
+  - host: realmedia.com
+    dns_a: none
+    ns: azure-dns (parked)
+    http_status: 000
+    note: no A record; no website
+  - host: 247media.com
+    dns_a: 54.221.208.242
+    http_status: 000
+    note: A record present but connection times out; no reachable site
+  - host: xaxis.com
+    http_status: 301
+    redirect: https://groupm.com/
+    note: successor brand also retired; redirects to GroupM
+  conclusion: no operating host, no developer portal, no API, no reachable /.well-known
+    surface
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
 - Marketing
+- Advertising
+- AdTech
+- Ad Serving
+- Programmatic Advertising
+- Digital Media
+- Defunct
+- Acquired
 apis: []
+common:
+- type: Wikipedia
+  url: https://en.wikipedia.org/wiki/24/7_Media
+- type: CompanyProfile
+  name: CB Insights — 24/7 Real Media
+  url: https://www.cbinsights.com/company/24-7-real-media
+- type: Press
+  name: WPP completes acquisition of 24/7 Real Media (2007)
+  url: https://www.wpp.com/en/news/2007/07/wpp-completes-acquisition-of-real-media
+- type: Press
+  name: Xaxis and 24/7 Media finalize merger (2014)
+  url: https://www.adexchanger.com/agencies/wpp-groups-xaxis-imbibes-247-media-gaining-a-sell-side-edge/
+- type: SEC
+  name: SEC SC 14D9 filing — 24/7 Real Media, Inc.
+  url: https://www.sec.gov/Archives/edgar/data/1062195/000110465907041059/a07-14605_5sc14d9.htm
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: minimal
+  artifacts_added: 0
+  pass: local-v1
